@@ -67,6 +67,14 @@ class Character {
         if (controller1.down) {
             this.dy += 0.5
         };
+        
+        if (controller1.left) {
+            this.dx -= 0.5
+        };
+        
+        if (controller1.right) {
+            this.dx += 0.5
+        }
         this.x += this.dx;
         this.y += this.dy;
         this.dx *= 0.9;
@@ -81,6 +89,13 @@ class Character {
             w: 60,
             h: 30,
         });
+        /*
+        obstacles.push({
+            x: canvas.width - 60,
+            y: Math.random() * (canvas.height - 0) + 0,
+            //triange stuff
+        })
+        */
     }
 }
 
@@ -107,7 +122,7 @@ class Controller {
 let character1 = new Character(player.x, player.y, player.w, player.h);
 let controller1 = new Controller();
 
-let timeInterval = 3000;
+let timeInterval = 1000;
 let timeCount = 10;
 let timeCheck = true;
 
